@@ -9,7 +9,11 @@ import { Contact } from './../models/contact';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'name', 'title', 'email', 'phone', 'address', 'city', 'actions'];
+  dataSource  = [];
+  contact = {};
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
