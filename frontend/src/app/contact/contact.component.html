@@ -51,3 +51,41 @@
 
     </mat-card-content>
 </mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Create a Contact</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #f="ngForm" class="mat-elevation-z8" style="width: 100%; padding: 5px;">
+
+            <mat-form-field>
+                <input matInput placeholder="Name" name="name" [(ngModel)]="contact.name" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Title" name="title" [(ngModel)]="contact.title" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Email" name="email" [(ngModel)]="contact.email" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Phone" name="phone" [(ngModel)]="contact.phone" required>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea placeholder="Address" name="address" [(ngModel)]="contact.address" matInput></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="City" name="city" [(ngModel)]="contact.city" required>
+            </mat-form-field>
+
+        </form>
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button *ngIf="!contact.id" (click)="createContact(f)" color="primary">Save Contact</button>
+        <button mat-raised-button *ngIf="contact.id" (click)="updateContact(f)" color="primary">Update Contact</button>
+        <button mat-raised-button (click)="newContact()" color="primary">New..</button>
+
+    </mat-card-actions>
+</mat-card>
