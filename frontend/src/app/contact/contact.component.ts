@@ -16,6 +16,17 @@ export class ContactComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.apiService.readContacts().subscribe((result) => {
+    this.dataSource  =  result;
+    });
+  }
+
+  selectContact(contact) {
+    this.contact = contact;
+  }
+
+  newContact() {
+    this.contact = {};
   }
 
 }
