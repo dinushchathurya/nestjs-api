@@ -29,4 +29,25 @@ export class ContactComponent implements OnInit {
     this.contact = {};
   }
 
+  createContact(f) {
+    this.apiService.createContact(f.value).subscribe((result) => {
+      console.log(result);
+    });
+
+  }
+
+  deleteContact(id) {
+    this.apiService.deleteContact(id).subscribe((result) => {
+      console.log(result);
+    });
+  }
+
+  updateContact(f) {
+    // tslint:disable-next-line:no-string-literal
+    f.value.id = this.contact['id'];
+    this.apiService.updateContact(f.value).subscribe((result) => {
+      console.log(result);
+    });
+  }
+
 }
