@@ -14,7 +14,7 @@ To run this application,
 
 * clone this repository `git clone https://github.com/dinushchathurya/nestjs-api` 
 
-* Then `nestjs-api`
+* Then `cd nestjs-api`
 
 * Run `npm install` seperately in both backend and frontend directories
 
